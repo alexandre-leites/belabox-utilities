@@ -1,0 +1,17 @@
+diff -ruN belabox-original/public/script.js belabox-enable-wss/public/script.js
+--- belabox-original/public/script.js	2024-04-17 17:35:44.000000000 +0200
++++ belabox-enable-wss/public/script.js	2024-05-19 18:49:27.504529100 +0200
+@@ -68,7 +68,12 @@
+ 
+ 
+ function tryConnect() {
+-  let c = new WebSocket("ws://" + window.location.host);
++  let wsProtocol = 'ws://';
++  if (window.location.protocol === 'https:') {
++    wsProtocol = 'wss://';
++  }
++
++  let c = new WebSocket(wsProtocol + window.location.host);
+   c.addEventListener('message', function (event) {
+     handleMessage(JSON.parse(event.data));
+   });

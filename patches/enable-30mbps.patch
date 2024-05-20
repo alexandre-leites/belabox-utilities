@@ -1,0 +1,12 @@
+diff -ruN belabox-original/belaUI.js belabox-30mbps/belaUI.js
+--- belabox-original/belaUI.js	2024-04-17 17:35:44.000000000 +0200
++++ belabox-30mbps/belaUI.js	2024-05-19 18:51:39.088511500 +0200
+@@ -2628,7 +2628,7 @@
+   const minBr = 300; // Kbps
+ 
+   if (params.max_br == undefined) return null;
+-  if (params.max_br < minBr || params.max_br > 12000) return null;
++  if (params.max_br < minBr || params.max_br > 30000) return null;
+ 
+   config.max_br = params.max_br;
+   saveConfig();
