@@ -28,3 +28,15 @@ patch -p1 -d /opt/belaUI/ < enable-30mbps.patch
 ```
 
 
+
+### **Enable Cloudflare Tunnel Service**
+- Description: Enable installation of [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) service. You can use it to access your BELABOX instance remotely (WS/WSS patch is required to work behind a HTTPS connection).
+- Type: Install Script
+- Commands:
+```bash
+curl -L --output install_cloudflared.sh https://raw.githubusercontent.com/alexandre-leites/belabox-utilities/main/3rdparty/install_cloudflared.sh
+chmod +x ./install_cloudflared.sh
+./install_cloudflared.sh --token <MYTOKEN>
+```
+
+
