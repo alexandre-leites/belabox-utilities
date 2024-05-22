@@ -10,3 +10,15 @@ diff -ruN belabox-original/belaUI.js belabox-30mbps/belaUI.js
  
    config.max_br = params.max_br;
    saveConfig();
+diff -ruN belabox-original/public/script.js belabox-30mbps/public/script.js
+--- belabox-original/public/script.js	2024-04-17 17:35:44.000000000 +0200
++++ belabox-30mbps/public/script.js	2024-05-22 06:01:03.640700900 +0200
+@@ -1406,7 +1406,7 @@
+   $("#bitrateSlider").slider({
+     range: false,
+     min: 500,
+-    max: 12000,
++    max: 30000,
+     step: 250,
+     value: bitrateDefault,
+     slide: (event, ui) => {
